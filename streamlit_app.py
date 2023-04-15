@@ -5,10 +5,10 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 
 # Load the model
-model = load_model('/my_model.h5')
+model = load_model('my_model.h5')
 
 # Load the tokenizer
-with open('/tokenizer.pickle', 'rb') as handle:
+with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
     #tokenizer = tokenizer_from_json(data)
 
