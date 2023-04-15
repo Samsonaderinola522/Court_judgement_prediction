@@ -105,11 +105,10 @@ def prefilled_form():
             #st.write(f'The judgment is likely to favor {second_party_input}.')
             st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
     
-#st.session_state.form_mode = None  
+st.session_state.form_mode = None  
     
 # Define your Streamlit app
 def main():
-    st.session_state.form_mode = None
     if st.session_state.form_mode is None:
         # Display initial form mode selector
         form_mode = st.radio("Select Form Mode", ["Empty Form", "Prefilled Form"])
