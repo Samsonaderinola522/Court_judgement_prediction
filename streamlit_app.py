@@ -118,22 +118,8 @@ def main():
             #st.write(st.session_state.form_mode)
     
     if st.session_state.form_mode is not None:
-         #st.write(form_mode)
-         #Display selected form mode
-         if st.session_state.form_mode == "Empty Form":
-            #st.write(form_mode)
-            #empty_form()
-            # Add text input fields for users to enter parties involved
-            st.session_state.first_party_input = st.text_input('Enter first party:')
-            st.session_state.second_party_input = st.text_input('Enter second party:')
-    
-            # Add a text input field for issue area
-            options = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
-            st.session_state.issue_area = st.selectbox("Select issue area:", options)
-    
-            # Add a text input field for users to enter their case facts
-            case_facts_input = st.text_area('Enter case facts:')
-    
+         st.write(form_mode)
+         
 
      #elif session_state.form_mode == "Prefilled Form":
             #st.write(form_mode)
