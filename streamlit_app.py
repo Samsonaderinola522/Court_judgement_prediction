@@ -106,8 +106,9 @@ def prefilled_form():
             st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
     
     
-    
 # Define your Streamlit app
+
+"""
 def main():
 
     # Displaying the image with caption
@@ -123,7 +124,20 @@ def main():
     # Display a button to refresh the chart
     if st.button('Prefilled Form'):
        empty_form()
-       
+"""   
+    
+def main():
+    if session_state.form_mode is None:
+        # Display initial form mode selector
+        form_mode = st.radio("Select Form Mode", ["Empty Form", "Prefilled Form"])
+        if st.button("Submit"):
+            session_state.form_mode = form_mode
+    else:
+        # Display selected form mode
+        if session_state.form_mode == "Empty Form":
+            empty_form()
+        elif session_state.form_mode == "Prefilled Form":
+            prefilled_form()
        
 if __name__ == '__main__':
     main()
