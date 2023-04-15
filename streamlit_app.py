@@ -112,8 +112,8 @@ def main():
     if st.session_state.form_mode is None:
         # Display initial form mode selector
         form_mode = st.radio("Select Form Mode", ["Empty Form", "Prefilled Form"])
-        if st.button("Submit"):
-            st.session_state.form_mode = form_mode
+        #if st.button("Submit"):
+        st.session_state.form_mode = form_mode
             #st.write(form_mode)
             #st.write(st.session_state.form_mode)
     
