@@ -5,10 +5,10 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 
 # Load the model
-model = load_model('/Users/USER/Desktop/streamlit_prj/julius app/my_model.h5')
+model = load_model('/my_model.h5')
 
 # Load the tokenizer
-with open('/Users/USER/Desktop/streamlit_prj/julius app/tokenizer.pickle', 'rb') as handle:
+with open('/tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
     #tokenizer = tokenizer_from_json(data)
 
@@ -91,4 +91,3 @@ if __name__ == '__main__':
 
 
 #This code loads Keras LSTM model and tokenizer, defines a function to make predictions based on case facts, and defines your Streamlit app with two sections: "Case Information" and "Prediction". You can customize this code to fit your specific use case.
-
