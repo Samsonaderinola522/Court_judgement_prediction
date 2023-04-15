@@ -114,6 +114,7 @@ def main():
         form_mode = st.radio("Select Form Mode", ["Empty Form", "Prefilled Form"])
         if st.button("Submit"):
             st.session_state.form_mode = form_mode
+            st.write(form_mode)
     else:
         # Display selected form mode
         #if st.session_state.form_mode == "Empty Form":
