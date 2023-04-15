@@ -118,9 +118,8 @@ def main():
             #st.write(st.session_state.form_mode)
     
     if st.session_state.form_mode is not None:
-         st.write(form_mode)
+        empty_form()
          
-
      #elif session_state.form_mode == "Prefilled Form":
             #st.write(form_mode)
             #prefilled_form()
