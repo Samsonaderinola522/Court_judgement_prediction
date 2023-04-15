@@ -4,11 +4,6 @@ import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 
-#import streamlit as st
-#from streamlit.state.session_state import SessionState
-
-session_state = st.session_state.get(form_mode=None)
-
 # Load the model
 model = load_model('my_model.h5')
 
@@ -110,9 +105,9 @@ def prefilled_form():
             #st.write(f'The judgment is likely to favor {second_party_input}.')
             st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
     
+st.session_state.form_mode = None  
     
 # Define your Streamlit app
-    
 def main():
     if session_state.form_mode is None:
         # Display initial form mode selector
@@ -125,6 +120,7 @@ def main():
             empty_form()
         elif session_state.form_mode == "Prefilled Form":
             prefilled_form()
+ 
        
 if __name__ == '__main__':
     main()
