@@ -109,14 +109,14 @@ st.session_state.form_mode = None
     
 # Define your Streamlit app
 def main():
-    if session_state.form_mode is None:
+    if st.session_state.form_mode is None:
         # Display initial form mode selector
         form_mode = st.radio("Select Form Mode", ["Empty Form", "Prefilled Form"])
         if st.button("Submit"):
-            session_state.form_mode = form_mode
+            st.session_state.form_mode = form_mode
     else:
         # Display selected form mode
-        if session_state.form_mode == "Empty Form":
+        if st.session_state.form_mode == "Empty Form":
             empty_form()
         elif session_state.form_mode == "Prefilled Form":
             prefilled_form()
