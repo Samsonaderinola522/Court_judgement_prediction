@@ -15,11 +15,11 @@ with open('tokenizer.pickle', 'rb') as handle:
 #Create lists of sample values for each input field:
 first_party_samples = ['Apple Inc.', 'Google LLC', 'Microsoft Corporation']
     
-    second_party_samples = ['Samsung Electronics Co., Ltd.', 'Huawei Technologies Co., Ltd.', 'Nokia Corporation']
+second_party_samples = ['Samsung Electronics Co., Ltd.', 'Huawei Technologies Co., Ltd.', 'Nokia Corporation']
     
-    issue_area_samples = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
+issue_area_samples = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
     
-    case_facts_samples = [
+case_facts_samples = [
         'This is a case about patent infringement of smart phone technologies.',
         'This is a contract dispute involving a major software services provider and a global bank.',
         'This is a constitutional law case involving freedom of speech and expression.'
@@ -51,8 +51,7 @@ def predict_party2(input_text, model=model, tokenizer=tokenizer, max_len=407):
         return "Second party"
 
 # STU A function to predict party 
-def predict_partystub(input_text):
-    
+def predict_partystub(input_text):    
     prediction_probabilities = 3
     # Determine the class based on prediction probability threshold (e.g., 0.5)
     if prediction_probabilities > 0.5:
