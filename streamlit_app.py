@@ -81,15 +81,15 @@ def main():
     st.image("fuoye-logo.png")
     
     # Add text input fields for users to enter parties involved
-    first_party_input = st.text_input('Enter first party:', value=first_party_input)
-    second_party_input = st.text_input('Enter second party:', value=second_party_input)
+    first_party_input = st.text_input('Enter first party:', value=first_party_inputx)
+    second_party_input = st.text_input('Enter second party:', value=second_party_inputx)
 
     # Add a text input field for issue area
     options = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
-    issue_area = st.selectbox("Select issue area:", options, value=issue_area)
+    issue_area = st.selectbox("Select issue area:", options, value=issue_areax)
 
     # Add a text input field for users to enter their case facts
-    case_facts_input = st.text_area('Enter case facts:', value=case_facts_input)
+    case_facts_input = st.text_area('Enter case facts:', value=case_facts_inputx)
     
     # Add a button to make predictions
     if st.button('Predict Judgment'):
@@ -104,10 +104,10 @@ def main():
     # Add a button for auto filling out form
     if st.button("Autofill-Sample"):
        # Randomly select one value from each list
-       first_party_input = random.choice(first_party_samples)
-       second_party_input = random.choice(second_party_samples)
-       issue_area = random.choice(issue_area_samples)
-       case_facts_input = random.choice(case_facts_samples)
+       first_party_inputx = random.choice(first_party_samples)
+       second_party_inputx = random.choice(second_party_samples)
+       issue_areax = random.choice(issue_area_samples)
+       case_facts_inputx = random.choice(case_facts_samples)
     
 if __name__ == '__main__':
     main()
