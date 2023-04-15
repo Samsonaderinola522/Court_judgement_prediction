@@ -59,7 +59,7 @@ def predict_party(case_facts):
     else:
         return 'Second Party'
         
-def empty_form()
+def empty_form():
     # Add text input fields for users to enter parties involved
     first_party_input = st.text_input('Enter first party:')
     second_party_input = st.text_input('Enter second party:')
@@ -82,7 +82,7 @@ def empty_form()
             #st.write(f'The judgment is likely to favor {second_party_input}.')
             st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
     
-def prefilled_form()
+def prefilled_form():
     # Add text input fields for users to enter parties involved
     first_party_input = st.text_input('Enter first party:')
     second_party_input = st.text_input('Enter second party:')
