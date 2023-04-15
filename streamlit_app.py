@@ -2,11 +2,11 @@ import streamlit as st
 
 def display_text():
     st.write('Fill this form')
-    Gun = st.textinput('what is gun?')
+    Gun = st.text_input('what is gun?')
 
 def display_text2():
     st.write('Fill this form')
-    Gun = st.textinput('what is gun?', value=Ak)
+    Gun = st.text_input('what is gun?', value=Ak)
 
 def main():
     st.title('My App')
