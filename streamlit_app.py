@@ -122,7 +122,7 @@ def main():
          #Display selected form mode
          if st.session_state.form_mode == "Empty Form":
             #st.write(form_mode)
-            empty_form()
+            #empty_form()
             # Add text input fields for users to enter parties involved
             first_party_input = st.text_input('Enter first party:')
             second_party_input = st.text_input('Enter second party:')
