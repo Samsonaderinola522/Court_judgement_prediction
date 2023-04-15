@@ -64,6 +64,9 @@ def main():
     # Set the title of your app
     st.title('Judgment Prediction App')
     
+    # Displaying the image with caption
+    st.image("fuoye-logo.png")
+    
     # Add text input fields for users to enter parties involved
     first_party_input = st.text_input('Enter first party:')
     second_party_input = st.text_input('Enter second party:')
