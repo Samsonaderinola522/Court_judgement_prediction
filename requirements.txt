@@ -43,6 +43,7 @@ Jinja2==3.1.2
 joblib==1.2.0
 jsonschema==4.17.3
 kiwisolver==1.4.4
+keras_preprocessing
 langdetect==1.0.9
 llvmlite==0.39.1
 lxml==4.9.2
