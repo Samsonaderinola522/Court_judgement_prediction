@@ -107,24 +107,6 @@ def prefilled_form():
     
     
 # Define your Streamlit app
-
-"""
-def main():
-
-    # Displaying the image with caption
-    st.image("fuoye-logo.png")
-    
-    # Set the title of your app
-    st.title('Judgment Prediction App')
-    
-    # Display a button to refresh the chart
-    if st.button('Empty Form'):
-       prefilled_form()
-    
-    # Display a button to refresh the chart
-    if st.button('Prefilled Form'):
-       empty_form()
-"""   
     
 def main():
     if session_state.form_mode is None:
