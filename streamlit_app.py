@@ -87,10 +87,10 @@ def prefilled_form():
     # Define sample input values for each input field
     first_party_samples = ["John Doe", "Jane Smith", "XYZ Corporation"]
     second_party_samples = ["Jack Johnson", "Acme Corporation", "Mary Lee"]
-    issue_area_samples = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", 
-                          "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", 
-                          "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", 
-                          "Others"]
+    issue_area_samples = ["0", "1", "2", "3", "4", 
+                          "5", "6", "7", "8", 
+                          "9", "9", "10", "12", 
+                          "13"]
     case_facts_samples = ["This is the first party's statement. The second party disagrees...", 
                           "The parties are in dispute over a contract governing...", 
                           "This case involves an alleged violation of privacy..."]
