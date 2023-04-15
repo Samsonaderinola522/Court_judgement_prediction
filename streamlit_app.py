@@ -120,9 +120,9 @@ def main():
     if st.session_state.form_mode is not None:
         empty_form()
          
-     #elif session_state.form_mode == "Prefilled Form":
-            #st.write(form_mode)
-            #prefilled_form()
+    elif session_state.form_mode == "Prefilled Form":
+        #st.write(form_mode)
+        prefilled_form()
  
        
 if __name__ == '__main__':
