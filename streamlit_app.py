@@ -138,7 +138,7 @@ def main():
         #empty_form()
         st.write(form_mode)
          
-    if session_state.form_mode == "Prefilled Form":
+    if st.session_state.form_mode == "Prefilled Form":
         #st.write(form_mode)
         prefilled_form()
  
