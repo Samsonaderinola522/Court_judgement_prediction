@@ -83,16 +83,33 @@ def empty_form():
             st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
     
 def prefilled_form():
+    # Define sample input values for each input field
+    first_party_samples = ["John Doe", "Jane Smith", "XYZ Corporation"]
+    second_party_samples = ["Jack Johnson", "Acme Corporation", "Mary Lee"]
+    issue_area_samples = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", 
+                          "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", 
+                          "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", 
+                          "Others"]
+    case_facts_samples = ["This is the first party's statement. The second party disagrees...", 
+                          "The parties are in dispute over a contract governing...", 
+                          "This case involves an alleged violation of privacy..."]
+    
+    # Randomly select a value from each sample list
+    first_party_value = random.choice(first_party_samples)
+    second_party_value = random.choice(second_party_samples)
+    issue_area_value = random.choice(issue_area_samples)
+    case_facts_value = random.choice(case_facts_samples)
+    
     # Add text input fields for users to enter parties involved
-    first_party_input = st.text_input('Enter first party:')
-    second_party_input = st.text_input('Enter second party:')
+    first_party_input = st.text_input('Enter first party:', value=first_party_value)
+    second_party_input = st.text_input('Enter second party:', value=second_party_value)
     
     # Add a text input field for issue area
     options = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
-    issue_area = st.selectbox("Select issue area:", options)
+    issue_area = st.selectbox("Select issue area:", options, value=issue_area_value)
     
     # Add a text input field for users to enter their case facts
-    case_facts_input = st.text_area('Enter case facts:')
+    case_facts_input = st.text_area('Enter case facts:', value=case_facts_value)
     
     # Add a button to make predictions
     if st.button('Predict Judgment'):
