@@ -116,7 +116,8 @@ def main():
             st.session_state.form_mode = form_mode
             st.write(form_mode)
             st.write(st.session_state.form_mode)
-    else:
+    
+    if st.session_state.form_mode is None:
         st.write(form_mode)
         # Display selected form mode
         #if st.session_state.form_mode == "Empty Form":
