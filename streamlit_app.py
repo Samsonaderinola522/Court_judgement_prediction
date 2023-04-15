@@ -125,25 +125,25 @@ def main():
             empty_form()
             # Add text input fields for users to enter parties involved
             first_party_input = st.text_input('Enter first party:')
-                second_party_input = st.text_input('Enter second party:')
+            second_party_input = st.text_input('Enter second party:')
     
-                # Add a text input field for issue area
-                options = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
-                issue_area = st.selectbox("Select issue area:", options)
+            # Add a text input field for issue area
+            options = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
+            issue_area = st.selectbox("Select issue area:", options)
     
-                # Add a text input field for users to enter their case facts
-                case_facts_input = st.text_area('Enter case facts:')
+            # Add a text input field for users to enter their case facts
+            case_facts_input = st.text_area('Enter case facts:')
     
-                # Add a button to make predictions
-                if st.button('Predict Judgment'):
-                    # Make a prediction and display the result
-                    prediction = predict_partystub(case_facts_input)
-                    if prediction == 'First Party':
-                        #st.write(f'The judgment is likely to favor {first_party_input}.')
-                        st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {first_party_input}. </h1>", unsafe_allow_html=True)
-                    else:
-                        #st.write(f'The judgment is likely to favor {second_party_input}.')
-                        st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
+            # Add a button to make predictions
+            if st.button('Predict Judgment'):
+                # Make a prediction and display the result
+                prediction = predict_partystub(case_facts_input)
+                if prediction == 'First Party':
+                    #st.write(f'The judgment is likely to favor {first_party_input}.')
+                    st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {first_party_input}. </h1>", unsafe_allow_html=True)
+                else:
+                    #st.write(f'The judgment is likely to favor {second_party_input}.')
+                    st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
                
      #elif session_state.form_mode == "Prefilled Form":
             #st.write(form_mode)
