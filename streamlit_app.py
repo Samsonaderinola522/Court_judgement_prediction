@@ -84,10 +84,10 @@ def main():
         prediction = predict_partystub(case_facts_input)
         if prediction == 'First Party':
             #st.write(f'The judgment is likely to favor {first_party_input}.')
-            st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor. </h1>", unsafe_allow_html=True)
+            st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {first_party_input. </h1>", unsafe_allow_html=True)
         else:
             #st.write(f'The judgment is likely to favor {second_party_input}.')
-            st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor. </h1>", unsafe_allow_html=True)
+            st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input. </h1>", unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
