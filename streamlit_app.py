@@ -134,17 +134,7 @@ def main():
             # Add a text input field for users to enter their case facts
             case_facts_input = st.text_area('Enter case facts:')
     
-            # Add a button to make predictions
-            if st.button('Predict Judgment'):
-                # Make a prediction and display the result
-                prediction = predict_partystub(case_facts_input)
-                if prediction == 'First Party':
-                    #st.write(f'The judgment is likely to favor {first_party_input}.')
-                    st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {first_party_input}. </h1>", unsafe_allow_html=True)
-                else:
-                    #st.write(f'The judgment is likely to favor {second_party_input}.')
-                    st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
-               
+
      #elif session_state.form_mode == "Prefilled Form":
             #st.write(form_mode)
             #prefilled_form()
