@@ -4,10 +4,10 @@ import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 
-import streamlit as st
-from streamlit.state.session_state import SessionState
+#import streamlit as st
+#from streamlit.state.session_state import SessionState
 
-session_state = SessionState.get(form_mode=None)
+session_state = st.sessionstate.get(form_mode=None)
 
 # Load the model
 model = load_model('my_model.h5')
