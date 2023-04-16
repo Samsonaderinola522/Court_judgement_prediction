@@ -94,7 +94,7 @@ def prefilled_form():
     case_facts_samples = ["This is the first party's statement. The second party disagrees...", 
                           "The parties are in dispute over a contract governing...", 
                           "This case involves an alleged violation of privacy..."]
-    case = random.randint(0,3)
+    case = random.randint(0,2)
     # Randomly select a value from each sample list
     first_party_value = first_party_samples[case]
     second_party_value = second_party_samples[case]
