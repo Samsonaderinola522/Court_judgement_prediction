@@ -88,16 +88,14 @@ def prefilled_form():
     first_party_samples = ["Jane Roe", "Peter Stanley, Sr. ", "John Giglio", "Sally Reed", "Marvin Miller", ""]
     second_party_samples = ["Henry Wade", "Illinois", "United States", "Cecil Reed", "California", ""]
     issue_area_samples = [0, 0, 1, 0, 2, 
-                          5, 6, 7, 8, 
-                          9, 10, 11, 12, 
-                          13]
+                         ]
     case_facts_samples = ["In 1970, Jane Roe (a fictional name used in court documents to protect the plaintiff’s identity) filed a lawsuit against Henry Wade, the district attorney of Dallas County, Texas, where she resided, challenging a Texas law making abortion illegal except by a doctor’s orders to save a woman’s life. In her lawsuit, Roe alleged that the state laws were unconstitutionally vague and abridged her right of personal privacy, protected by the First, Fourth, Fifth, Ninth, and Fourteenth Amendments.", 
                           "Joan Stanley had three children with Peter Stanley.  The Stanleys never married, but lived together off and on for 18 years.  When Joan died, the State of Illinois took the children.  Under Illinois law, unwed fathers were presumed unfit parents regardless of their actual fitness and their children became wards of the state.  Peter appealed the decision, arguing that the Illinois law violated the Equal Protection Clause of the Fourteenth Amendment because unwed mothers were not deprived of their children without a showing that they were actually unfit parents.  The Illinois Supreme Court rejected Stanley’s Equal Protection claim, holding that his actual fitness as a parent was irrelevant because he and the children’s mother were unmarried.", 
                           "John Giglio was convicted of passing forged money orders.  While his appeal to the U.S. Court of Appeals for the Second Circuit was pending, Giglio’s counsel discovered new evidence. The evidence indicated that the prosecution failed to disclose that it promised a key witness immunity from prosecution in exchange for testimony against Giglio.  The district court denied Giglio’s motion for a new trial, finding that the error did not affect the verdict.  The Court of Appeals affirmed."
                           "The Idaho Probate Code specified that 'males must be preferred to females' in appointing administrators of estates. After the death of their adopted son, both Sally and Cecil Reed sought to be named the administrator of their son's estate (the Reeds were separated). According to the Probate Code, Cecil was appointed administrator and Sally challenged the law in court. "
                           "Miller, after conducting a mass mailing campaign to advertise the sale of 'adult' material, was convicted of violating a California statute prohibiting the distribution of obscene material. Some unwilling recipients of Miller's brochures complained to the police, initiating the legal proceedings. "
                          ]
-    case = random.randint(0,2)
+    case = random.randint(0,4)
     # Randomly select a value from each sample list
     first_party_value = first_party_samples[case]
     second_party_value = second_party_samples[case]
