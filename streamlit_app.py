@@ -127,6 +127,12 @@ st.session_state.form_mode = None
     
 # Define your Streamlit app
 def main():
+    # Displaying the image with caption
+    st.image("fuoye-logo.png")
+    
+    # Set the title of your app
+    st.title('Judgment Prediction App')
+    
     if st.session_state.form_mode is None:
         # Display initial form mode selector
         form_mode = st.radio("Select Form Mode", ["Empty Form", "Prefilled Form"])
@@ -136,8 +142,8 @@ def main():
             #st.write(st.session_state.form_mode)
     
     if st.session_state.form_mode == "Empty Form":
-        #empty_form()
-        st.write(form_mode)
+        empty_form()
+        #st.write(form_mode)
          
     if st.session_state.form_mode == "Prefilled Form":
         #st.write(form_mode)
