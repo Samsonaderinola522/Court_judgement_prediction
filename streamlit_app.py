@@ -76,7 +76,7 @@ def empty_form():
     # Add a button to make predictions
     if st.button('Predict Judgment'):
         # Make a prediction and display the result
-        prediction = predict_partystub(case_facts_input)
+        prediction = predict_party(case_facts_input)
         if prediction == 'First Party':
             #st.write(f'The judgment is likely to favor {first_party_input}.')
             st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {first_party_input}. </h1>", unsafe_allow_html=True)
