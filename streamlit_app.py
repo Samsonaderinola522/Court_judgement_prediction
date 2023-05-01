@@ -132,7 +132,7 @@ def main():
         seed_prefl = random.randint(0, 4000)
          
     if st.session_state.form_mode == "Prefilled Form":
-        #st.write(form_mode)
+        st.write(seed_prefl)
         first_party_value, second_party_value, issue_area_value, case_facts_value = prefilled_form(seed_prefl)
         # Add text input fields for users to enter parties involved
         first_party_input = st.text_input('Enter first party:', value=first_party_value)
