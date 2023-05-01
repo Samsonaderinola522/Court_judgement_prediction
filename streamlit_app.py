@@ -84,7 +84,6 @@ def empty_form():
             #st.write(f'The judgment is likely to favor {second_party_input}.')
             st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
     
-@st.cache_data
 def prefilled_form():
     # Define sample input values for each input field
     first_party_samples = ["Jane Roe", "Peter Stanley, Sr. ", "John Giglio", "Sally Reed", "Marvin Miller", ""]
@@ -104,28 +103,9 @@ def prefilled_form():
     issue_area_value = issue_area_samples[case]
     case_facts_value = case_facts_samples[case]
     
-    # Add text input fields for users to enter parties involved
-    first_party_input = st.text_input('Enter first party:', value=first_party_value)
-    second_party_input = st.text_input('Enter second party:', value=second_party_value)
+    return first_party_value, second_party_value, issue_area_value, case_facts_value
     
-    # Add a text input field for issue area
-    options = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
-    issue_area = st.selectbox("Select issue area:", options, index=issue_area_value)
-    
-    # Add a text input field for users to enter their case facts
-    case_facts_input = st.text_area('Enter case facts:', value=case_facts_value)
-    
-    # Add a button to make predictions
-    if st.button('Predict Judgment'):
-        # Make a prediction and display the result
-        prediction = predict_partystub(case_facts_input)
-        if prediction == 'First Party':
-            #st.write(f'The judgment is likely to favor {first_party_input}.')
-            st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {first_party_input}. </h1>", unsafe_allow_html=True)
-        else:
-            #st.write(f'The judgment is likely to favor {second_party_input}.')
-            st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
-    
+
 st.session_state.form_mode = None  
     
 # Define your Streamlit app
@@ -150,8 +130,29 @@ def main():
          
     if st.session_state.form_mode == "Prefilled Form":
         #st.write(form_mode)
-        #@st.cache_data
+        #seed_prefl = random.randint()
         prefilled_form()
+        # Add text input fields for users to enter parties involved
+        first_party_input = st.text_input('Enter first party:', value=first_party_value)
+        second_party_input = st.text_input('Enter second party:', value=second_party_value)
+
+        # Add a text input field for issue area
+        options = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
+        issue_area = st.selectbox("Select issue area:", options, index=issue_area_value)
+
+        # Add a text input field for users to enter their case facts
+        case_facts_input = st.text_area('Enter case facts:', value=case_facts_value)
+
+        # Add a button to make predictions
+        if st.button('Predict Judgment'):
+            # Make a prediction and display the result
+            prediction = predict_partystub(case_facts_input)
+            if prediction == 'First Party':
+                #st.write(f'The judgment is likely to favor {first_party_input}.')
+                st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {first_party_input}. </h1>", unsafe_allow_html=True)
+            else:
+                #st.write(f'The judgment is likely to favor {second_party_input}.')
+                st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
  
        
 if __name__ == '__main__':
