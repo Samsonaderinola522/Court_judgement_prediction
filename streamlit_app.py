@@ -7,7 +7,6 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 from keras.preprocessing.sequence import pad_sequences
 
-
 # Load the model
 model = load_model('my_model.h5')
 
