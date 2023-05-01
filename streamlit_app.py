@@ -125,10 +125,11 @@ def main():
             #st.write(form_mode)
             #st.write(st.session_state.form_mode)
     
+    seed_prefl = 0
     if st.session_state.form_mode == "Empty Form":
         empty_form()
         #st.write(form_mode)
-        seed_prefl = random.randint()
+        seed_prefl = random.randint(0, 4000)
          
     if st.session_state.form_mode == "Prefilled Form":
         #st.write(form_mode)
