@@ -6,6 +6,7 @@ import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 from keras_preprocessing.sequence import pad_sequences
+MAX_SEQUENCE_LENGTH = 407
 
 # Load the model
 model = load_model('my_model.h5')
@@ -18,11 +19,9 @@ with open('tokenizer.pickle', 'rb') as handle:
 # A fuctio for tokeizing ad padding
 def tokenize_and_pad_input(input_text, tokenizer, max_len):
     # Tokenize the text
-    tokens = tokenizer.texts_to_sequences([input_text])
-    
+    tokens = tokenizer.texts_to_sequences([input_text])    
     # Pad sequences
-    padded_tokens = pad_sequences(tokens, maxlen=max_len)
-    
+    padded_tokens = pad_sequences(tokens, maxlen=max_len)    
     return padded_tokens
 
 # A function to predict party -2
