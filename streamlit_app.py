@@ -147,7 +147,7 @@ def main():
         options = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
         issue_area = st.selectbox("Select issue area:", options, index=issue_area_value)
 
-   ;     # Add a text input field for users to enter their case facts
+        # Add a text input field for users to enter their case facts
         case_facts_input = st.text_area('Enter case facts:', value=case_facts_value)
 
         # Add a button to make predictions
