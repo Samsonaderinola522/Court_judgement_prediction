@@ -107,7 +107,8 @@ def prefilled_form(unused_x):
     return first_party_value, second_party_value, issue_area_value, case_facts_value
     
 
-st.session_state.form_mode = None  
+st.session_state.form_mode = None
+st.session_state.seed_prefl = 0
     
 # Define your Streamlit app
 def main():
@@ -129,14 +130,12 @@ def main():
         empty_form()
         #st.write(form_mode)
         #seed_prefl = 0
-        seed_prefl = random.randint(0, 4000)
-        st.write(seed_prefl)
-         
+        st.session_state.seed_prefl = random.randint(0, 4000)
+        st.write(st.session_state.seed_prefl)        
+    
     if st.session_state.form_mode == "Prefilled Form":
-        if not "seed_prefl" in globals():
-           seed_prefl = random.randint(0, 4000)
-        st.write(seed_prefl)
-        first_party_value, second_party_value, issue_area_value, case_facts_value = prefilled_form(seed_prefl)
+        st.write(st.session_state.seed_prefl)
+        first_party_value, second_party_value, issue_area_value, case_facts_value = prefilled_form(st.session_state.seed_prefl)
         # Add text input fields for users to enter parties involved
         first_party_input = st.text_input('Enter first party:', value=first_party_value)
         second_party_input = st.text_input('Enter second party:', value=second_party_value)
