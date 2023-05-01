@@ -84,7 +84,8 @@ def empty_form():
             #st.write(f'The judgment is likely to favor {second_party_input}.')
             st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
     
-def prefilled_form():
+@st.cache_data    
+def prefilled_form(unused_x):
     # Define sample input values for each input field
     first_party_samples = ["Jane Roe", "Peter Stanley, Sr. ", "John Giglio", "Sally Reed", "Marvin Miller", ""]
     second_party_samples = ["Henry Wade", "Illinois", "United States", "Cecil Reed", "California", ""]
@@ -127,11 +128,11 @@ def main():
     if st.session_state.form_mode == "Empty Form":
         empty_form()
         #st.write(form_mode)
+        seed_prefl = random.randint()
          
     if st.session_state.form_mode == "Prefilled Form":
         #st.write(form_mode)
-        #seed_prefl = random.randint()
-        first_party_value, second_party_value, issue_area_value, case_facts_value = prefilled_form()
+        first_party_value, second_party_value, issue_area_value, case_facts_value = prefilled_form(seed_prefl)
         # Add text input fields for users to enter parties involved
         first_party_input = st.text_input('Enter first party:', value=first_party_value)
         second_party_input = st.text_input('Enter second party:', value=second_party_value)
