@@ -5,6 +5,8 @@ import streamlit as st
 import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
+from keras.preprocessing.sequence import pad_sequences
+
 
 # Load the model
 model = load_model('my_model.h5')
@@ -145,7 +147,7 @@ def main():
         options = ["Civil Rights", "Due Process", "First Amendment", "Criminal Procedure", "Privacy", "Federal Taxation", "Economic Activity", "Judicial Power", "Federalism", "Attorneys", "Miscellaneous", "Interstate Relations", "Private Action", "Others"]
         issue_area = st.selectbox("Select issue area:", options, index=issue_area_value)
 
-        # Add a text input field for users to enter their case facts
+   ;     # Add a text input field for users to enter their case facts
         case_facts_input = st.text_area('Enter case facts:', value=case_facts_value)
 
         # Add a button to make predictions
