@@ -84,6 +84,7 @@ def empty_form():
             #st.write(f'The judgment is likely to favor {second_party_input}.')
             st.markdown(f"<h1 style='text-align:center; color: green;'> The judgment is likely to favor {second_party_input}. </h1>", unsafe_allow_html=True)
     
+@st.cache_data
 def prefilled_form():
     # Define sample input values for each input field
     first_party_samples = ["Jane Roe", "Peter Stanley, Sr. ", "John Giglio", "Sally Reed", "Marvin Miller", ""]
@@ -149,7 +150,7 @@ def main():
          
     if st.session_state.form_mode == "Prefilled Form":
         #st.write(form_mode)
-        @st.cache_data
+        #@st.cache_data
         prefilled_form()
  
        
