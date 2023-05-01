@@ -149,6 +149,7 @@ def main():
          
     if st.session_state.form_mode == "Prefilled Form":
         #st.write(form_mode)
+        @st.cache_data
         prefilled_form()
  
        
