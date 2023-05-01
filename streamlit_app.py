@@ -131,6 +131,7 @@ def main():
         #st.write(form_mode)
         #seed_prefl = 0
         seed_prefl = random.randint(0, 4000)
+        st.write(seed_prefl)
          
     if st.session_state.form_mode == "Prefilled Form":
         if not "seed_prefl" in globals():
