@@ -108,7 +108,8 @@ def prefilled_form(unused_x):
     
 
 st.session_state.form_mode = None
-st.session_state.seed_prefl = 0
+if 'seed_prefl' not in st.session_state:
+   st.session_state.seed_prefl = 0
     
 # Define your Streamlit app
 def main():
